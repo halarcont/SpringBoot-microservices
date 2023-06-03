@@ -1,4 +1,4 @@
-package com.springbootservicioitem.service;
+package com.springbootservicioitem.models.service;
 
 import com.springbootservicioitem.clientes.ProductoClienteRest;
 import com.springbootservicioitem.models.Item;
@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 @Service("serviceFeign")
-@Primary
-public class ItemServiceFeign implements ItemService{
+public class ItemServiceFeign implements ItemService {
 
     @Autowired
     private ProductoClienteRest clienteFeign;
@@ -26,4 +24,5 @@ public class ItemServiceFeign implements ItemService{
     public Item findById(Long id, Integer cantidad) {
         return new Item(clienteFeign.detalle(id), cantidad);
     }
+
 }

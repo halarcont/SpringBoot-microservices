@@ -2,7 +2,7 @@ package com.springbootservicioitem.controllers;
 
 
 import com.springbootservicioitem.models.Item;
-import com.springbootservicioitem.service.ItemService;
+import com.springbootservicioitem.models.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,8 @@ public class ItemController {
     }
 
     @GetMapping("/ver/{id}/cantidad/{cantidad}")
-    public Item detalles(@PathVariable Long id, @PathVariable Integer cantidad){
+    public Item detalle(@PathVariable Long id, @PathVariable Integer cantidad) {
         return itemService.findById(id, cantidad);
     }
+
 }

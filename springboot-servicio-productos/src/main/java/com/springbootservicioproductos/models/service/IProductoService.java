@@ -1,4 +1,4 @@
-package com.springbootservicioproductos.service;
+package com.springbootservicioproductos.models.service;
 
 import com.springbootservicioproductos.models.entity.Producto;
 
@@ -8,5 +8,4 @@ public interface IProductoService {
 
     public List<Producto> findAll();
     public Producto findById(Long id);
-
 }
